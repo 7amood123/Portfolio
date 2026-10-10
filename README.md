@@ -50,8 +50,8 @@ No backend and no server-side rendering are required.
 
 Copy `.env.example` to `.env` when you have a real domain.
 
-- `VITE_SITE_URL` — absolute origin, no trailing slash, for the canonical URL, Open Graph image, and sitemap. Leave it empty until the domain exists. The build does not invent one.
-- `VITE_BASE` — optional subdirectory such as `/portfolio/`. Use `/` for a normal host.
+- `VITE_SITE_URL` — absolute public URL, no trailing slash, for the canonical URL, Open Graph image, and sitemap. Defaults to `https://7amood123.github.io/Portfolio`. Set it to an empty value to omit these tags.
+- `VITE_BASE` — public base path. Defaults to `/Portfolio/` for GitHub Pages (the repository name is case-sensitive). Use `/` for a normal host.
 
 Language is switched in the browser and stored in `localStorage`. There are no separate `/en` and `/tr` URLs, so the site does not advertise alternate language URLs to search engines. The HTML metadata defaults to English. The visible copy updates after JavaScript runs.
 

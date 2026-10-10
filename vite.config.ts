@@ -6,13 +6,16 @@ import { resolve } from 'node:path'
 import { fileURLToPath, URL } from 'node:url'
 import type { Plugin } from 'vite'
 
+// Canonical public URL of the GitHub Pages project site (no trailing slash).
+const DEFAULT_SITE_URL = 'https://7amood123.github.io/Portfolio'
+
 function siteOrigin() {
-  const raw = process.env.VITE_SITE_URL?.trim()
+  const raw = (process.env.VITE_SITE_URL ?? DEFAULT_SITE_URL).trim()
   if (!raw) return ''
   try {
     const url = new URL(raw)
     if (url.protocol !== 'https:' && url.protocol !== 'http:') return ''
-    return url.origin
+    return (url.origin + url.pathname).replace(/\/+$/, '')
   } catch {
     return ''
   }
@@ -58,8 +61,8 @@ function seoFilesPlugin(): Plugin {
   }
 }
 
-// GitHub Pages project site: https://7amood123.github.io/portfolio/
-const base = process.env.VITE_BASE && process.env.VITE_BASE.startsWith('/') ? process.env.VITE_BASE : '/portfolio/'
+// GitHub Pages project site: https://7amood123.github.io/Portfolio/ (repository name is case-sensitive)
+const base = process.env.VITE_BASE && process.env.VITE_BASE.startsWith('/') ? process.env.VITE_BASE : '/Portfolio/'
 
 export default defineConfig({
   base,

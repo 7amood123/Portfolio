@@ -48,12 +48,12 @@ describe('translations', () => {
 })
 
 describe('profile', () => {
-  it('uses the verified contact links and does not assume a portrait file', () => {
+  it('uses the verified contact links and resolves the bundled portrait file', () => {
     expect(profile.email).toBe('mo.abughazala@gmail.com')
     expect(profile.github).toBe('https://github.com/7amood123')
     expect(profile.linkedin).toBe('https://www.linkedin.com/in/mohammed-abughazala-810007257/')
     expect(navItems.map((item) => item.id)).not.toContain('experience')
-    expect(screenAssets.profile).toBeNull()
+    expect(screenAssets.profile).toEqual(expect.stringMatching(/profile.*\.jpg$/))
   })
 
   it('matches the static metadata to the same public identity', () => {

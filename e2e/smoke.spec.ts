@@ -48,8 +48,8 @@ test('loads the portfolio, links, and language without a model request', async (
   await page.getByRole('button', { name: 'English' }).click()
   await expect(page.getByRole('heading', { name: 'Selected Work' })).toBeVisible()
 
-  await expect(page.locator('.device-rail')).toContainText('MA')
-  expect(urls.some((url) => url.includes('profile.jpg') || url.includes('mohammed-avatar.glb'))).toBe(false)
+  await expect(page.locator('.device-rail img').first()).toHaveAttribute('src', /profile.*\.jpg/)
+  expect(urls.some((url) => url.includes('mohammed-avatar.glb'))).toBe(false)
   expect(errors, errors.join('\n')).toEqual([])
 })
 
@@ -99,7 +99,7 @@ test('keeps content available with reduced motion', async ({ browser }, testInfo
   const page = await context.newPage()
   await page.goto('./')
   await expect(page.getByRole('heading', { level: 1 })).toContainText('Mohammed')
-  await expect(page.locator('#hero')).toContainText('MA')
+  await expect(page.locator('#hero img').first()).toHaveAttribute('src', /profile.*\.jpg/)
   await expect(page.locator('#project-finance')).toContainText('48,250')
   await expect(page.locator('canvas')).toHaveCount(0)
   await expect(page.getByRole('heading', { name: 'Experience' })).toHaveCount(0)

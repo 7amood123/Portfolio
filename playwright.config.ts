@@ -8,13 +8,13 @@ export default defineConfig({
   reporter: 'list',
   timeout: 60_000,
   use: {
-    baseURL: 'http://127.0.0.1:4173/portfolio/',
+    baseURL: 'http://127.0.0.1:4173/Portfolio/',
     trace: 'on-first-retry',
     permissions: ['clipboard-read', 'clipboard-write'],
   },
   webServer: {
     command: 'npm run build && npm run preview -- --host 127.0.0.1 --port 4173 --strictPort',
-    url: 'http://127.0.0.1:4173/portfolio/',
+    url: 'http://127.0.0.1:4173/Portfolio/',
     reuseExistingServer: !process.env.CI,
     timeout: 180_000,
   },
