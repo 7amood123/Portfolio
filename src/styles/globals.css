@@ -1,0 +1,211 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter Variable", Inter, ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk Variable", "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --color-bg: #08080d;
+  --color-bg-secondary: #111018;
+  --color-surface: #191522;
+  --color-purple: #8b5cf6;
+  --color-purple-deep: #6d28d9;
+  --color-purple-hover: #7c3aed;
+  --color-violet: #a78bfa;
+  --color-violet-soft: #c4b5fd;
+  --color-text: #f5f3fa;
+  --color-muted: #a6a1b3;
+  --color-border: rgba(167, 139, 250, 0.15);
+}
+
+@layer base {
+  html {
+    background: #08080d;
+    color-scheme: dark;
+    scroll-padding-top: 5.5rem;
+    scrollbar-color: #3a3348 transparent;
+    overflow-x: clip;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    overflow-x: clip;
+    background: #08080d;
+    color: var(--color-text);
+    font-family: var(--font-sans);
+    line-height: 1.65;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    letter-spacing: -0.03em;
+    line-height: 1.12;
+  }
+
+  ::selection {
+    background: rgba(139, 92, 246, 0.35);
+    color: #f5f3fa;
+  }
+
+  :focus-visible {
+    outline: 2px solid #c4b5fd;
+    outline-offset: 3px;
+  }
+
+  canvas {
+    display: block;
+  }
+}
+
+.skip-link {
+  position: fixed;
+  left: 1rem;
+  top: 0.75rem;
+  z-index: 50;
+  transform: translateY(-160%);
+  border-radius: 999px;
+  background: #f5f3fa;
+  color: #08080d;
+  padding: 0.65rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.skip-link:focus-visible {
+  transform: translateY(0);
+  outline: 2px solid #6d28d9;
+}
+
+.scroll-line {
+  display: block;
+  width: 1px;
+  height: 2.75rem;
+  background: linear-gradient(#a78bfa, transparent);
+  transform-origin: top;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .scroll-line {
+    animation: scroll-pulse 2.6s ease-in-out infinite;
+  }
+}
+
+@keyframes scroll-pulse {
+  0%,
+  100% {
+    transform: scaleY(0.55);
+    opacity: 0.45;
+  }
+  50% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+.device-scene {
+  width: min(100%, 250px);
+  margin-inline: auto;
+  perspective: 1400px;
+}
+
+.device-tilt {
+  transform-style: preserve-3d;
+}
+
+.device-shell {
+  position: relative;
+  border-radius: 2.35rem;
+  padding: 0.65rem;
+  background:
+    linear-gradient(165deg, rgba(255, 255, 255, 0.18), transparent 26%),
+    linear-gradient(180deg, #322f3c 0%, #16141c 42%, #0c0b10 100%);
+  box-shadow:
+    0 28px 50px rgba(0, 0, 0, 0.42),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.14);
+}
+
+.device-button {
+  position: absolute;
+  top: 6.5rem;
+  right: -0.18rem;
+  width: 0.18rem;
+  height: 2.4rem;
+  border-radius: 0 0.2rem 0.2rem 0;
+  background: #3a3646;
+}
+
+.device-screen {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 9 / 19.15;
+  border-radius: 1.8rem;
+  background: #100e16;
+}
+
+.device-layer {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.device-island {
+  position: absolute;
+  top: 0.55rem;
+  left: 50%;
+  z-index: 5;
+  height: 1.05rem;
+  width: 4.4rem;
+  transform: translateX(-50%);
+  border-radius: 999px;
+  background: #050508;
+}
+
+.device-glass {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  border-radius: inherit;
+  background: linear-gradient(115deg, rgba(255, 255, 255, 0.14), transparent 34%, transparent 62%, rgba(167, 139, 250, 0.06));
+}
+
+.device-shadow {
+  width: 62%;
+  height: 0.9rem;
+  margin: 1.1rem auto 0;
+  border-radius: 999px;
+  background: radial-gradient(ellipse, rgba(0, 0, 0, 0.55), transparent 70%);
+}
+
+.device-mobile {
+  overflow: clip;
+}
+
+.device-mobile.is-resting {
+  height: 0;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+@media (max-width: 1023px) {
+  .device-mobile .device-scene {
+    width: 210px;
+  }
+}
+
+.device-slot {
+  pointer-events: none;
+}

@@ -1,0 +1,237 @@
+{
+  "meta": {
+    "title": "Mohammed Abughazala | Yazılım Mühendisi",
+    "description": "Full-stack geliştirme, mobil uygulamalar ve yapay zekâ ile bütünleşen çözümler üzerinde çalışan yazılım mühendisi Mohammed Abughazala'nın portfolyosu."
+  },
+  "common": {
+    "location": "İstanbul, Türkiye"
+  },
+  "a11y": {
+    "skip": "İçeriğe geç",
+    "backToTop": "Başa dön",
+    "copy": "Kopyala",
+    "copyEmail": "E-posta adresini kopyala",
+    "copied": "E-posta kopyalandı",
+    "copyFailed": "E-posta kopyalanamadı",
+    "openInNewTab": "Yeni sekmede açılır"
+  },
+  "nav": {
+    "home": "Mohammed Abughazala, başa dön",
+    "work": "Projeler",
+    "about": "Hakkımda",
+    "skills": "Yetenekler",
+    "contact": "İletişim",
+    "language": "Dil",
+    "primary": "Ana menü",
+    "mobile": "Menü",
+    "openMenu": "Menüyü aç",
+    "closeMenu": "Menüyü kapat"
+  },
+  "hero": {
+    "role": "Yazılım Mühendisi",
+    "headline": "Gerçek sorunlar için özenli yazılımlar geliştiriyorum.",
+    "description": "İstanbul'da yaşayan bir yazılım mühendisiyim. Web geliştirme, mobil uygulamalar ve yapay zekâ ile bütünleşen sistemler üzerinde çalışıyorum. Karmaşık problemleri pratik, sezgisel dijital deneyimlere dönüştürmekten keyif alıyorum.",
+    "ctaWork": "Çalışmalarımı İncele",
+    "ctaContact": "İletişime Geç",
+    "scroll": "Kaydır"
+  },
+  "device": {
+    "initials": "MA",
+    "codeFile": "focus.ts",
+    "code": [
+      "const focus = ['web', 'mobile', 'ai']",
+      "const city = 'Istanbul'",
+      "function build(problem: string) {",
+      "  return makeUseful(problem)",
+      "}"
+    ]
+  },
+  "work": {
+    "title": "Öne Çıkan Projeler",
+    "subtitle": "Yazılım mühendisliği, yapay zekâ ve pratik problem çözme üzerine çalıştığım projelerden bir seçki.",
+    "contribution": "Katkım",
+    "challenges": "Mühendislik odağı",
+    "technologies": "Teknolojiler",
+    "status": "Durum",
+    "timeline": "Dönem",
+    "present": "Devam ediyor",
+    "conceptual": "Kavramsal arayüz",
+    "fictionalData": "Kurgusal gösterim verisi",
+    "notMedical": "Gösterim amaçlıdır. Tıbbi bir ölçüm değildir.",
+    "productDirection": "Ürün yönü"
+  },
+  "projects": {
+    "finance": {
+      "title": "Kişisel Finans Takibi",
+      "category": "Full-Stack Web ve Mobil Uygulama",
+      "status": "Aktif geliştirme",
+      "description": "Gelir, gider, hesap, bütçe ve finansal hareketleri web ve mobil üzerinden düzenlemeye yarayan bir kişisel finans platformu. Fikir, babamın kayıtlarını Excel'de elle tutmasından ve bu takibi daha erişilebilir kılma isteğinden çıktı.",
+      "visionNote": "Platform aktif olarak geliştiriliyor. Aşağıdaki başlıklar ürünün yönünü anlatır. Her birinin uygulama durumu bu sitede doğrulanmadığı için tamamlanmış özellik olarak sunulmaz.",
+      "features": [
+        "Gelir ve gider takibi",
+        "Hesap yönetimi",
+        "Bütçe yönetimi",
+        "Yinelenen işlemler",
+        "Finansal raporlar",
+        "Çoklu dil desteği",
+        "Hesap tablosu içe aktarma",
+        "Fiş okuma",
+        "Yapay zekâ destekli işlevler",
+        "Cihaz bildirimlerinden işlem algılama; kayıttan önce kullanıcının onayı"
+      ],
+      "contribution": "Web ve mobil deneyimi ortak bir backend, kimlik doğrulama, finansal kayıtlar için ilişkisel bir model ve aşamalı teslimatla geliştiriyorum.",
+      "challenges": [
+        "Web ve mobil için paylaşılan tek backend",
+        "Kimlik doğrulama ve veri sahipliği",
+        "Finansal kayıtların ilişkisel modellenmesi",
+        "Ürünü aşamalar halinde çıkarmak"
+      ],
+      "stackWeb": "Web",
+      "stackWebItems": ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "PostgreSQL"],
+      "stackMobile": "Mobil",
+      "stackMobileItems": ["React Native", "Expo", "TypeScript"],
+      "stackAlso": "Birlikte kullanılan",
+      "stackAlsoItems": ["Supabase Authentication", "Recharts", "Internationalization"],
+      "demo": "Demo",
+      "balance": "Bakiye",
+      "income": "Gelir",
+      "expenses": "Gider",
+      "balanceValue": "₺48.250",
+      "incomeValue": "₺62.400",
+      "expenseValue": "₺14.150",
+      "sample": "Örnek veri",
+      "activity": "Son hareketler",
+      "groceries": "Market",
+      "transport": "Ulaşım",
+      "housing": "Konut",
+      "food": "Yemek",
+      "market": "Demo Market",
+      "transit": "Demo Transit",
+      "rent": "Demo Rent",
+      "marketValue": "−₺186",
+      "transitValue": "−₺42",
+      "rentValue": "−₺12.500",
+      "months": ["Nis", "May", "Haz", "Tem", "Ağu", "Eyl"]
+    },
+    "soulspace": {
+      "title": "SoulSpace",
+      "category": "Yapay Zekâ / Full-Stack Geliştirme",
+      "status": "Akademik mezuniyet projesi",
+      "description": "SoulSpace, bir takım arkadaşımla mezuniyet projem olarak geliştirdiğim, yapay zekâ destekli bir ruh sağlığı destek asistanı. Profesyonel destek almaktan çekinebilecek kişiler için sohbet tabanlı etkileşimlerin nasıl destek sunabileceğini araştırdı. Sistem, uygun olduğunda profesyonel desteği teşvik edecek şekilde tasarlandı.",
+      "disclaimer": "Bu bir akademik projedir. Klinik olarak doğrulanmış, tıbbi olarak sertifikalandırılmış veya kanıtlanmış bir terapi aracı değildir.",
+      "contribution": "Full-stack geliştirme, sohbet tabanlı yapay zekâ entegrasyonu, model eğitimi ve testleri, uygulama işlevleri ve takım arkadaşımla iş birliği üzerinde çalıştım.",
+      "challenges": [
+        "Sohbet sistemini Laravel içine yerleştirmek",
+        "Diyalog davranışını eğitmek ve test etmek",
+        "Profesyonel desteğin yerini almadan onu teşvik etmek",
+        "Projeyi iki kişilik bir ekiple geliştirmek"
+      ],
+      "milestones": [
+        "Üniversiteden A notu",
+        "Üniversitede sunum",
+        "Güney Afrika'da melek yatırımcılara sunum"
+      ],
+      "technologies": ["Rasa", "PHP", "Laravel", "Livewire"],
+      "you": "Sen",
+      "companion": "SoulSpace",
+      "messages": [
+        { "from": "user", "text": "Son zamanlarda her şey biraz fazla geliyor." },
+        { "from": "companion", "text": "Bu ağır gelebilir. Seni dinlemek için buradayım. Bunu tek başına taşımak istemezsen, bir ruh sağlığı uzmanı yardımcı olabilir." },
+        { "from": "user", "text": "Nereden başlayacağımı bilmiyorum." },
+        { "from": "companion", "text": "Bir danışman ya da bulunduğun yerdeki sağlık hizmeti sağlam bir sonraki adım olabilir. Ne söylemek istediğini birlikte netleştirebiliriz." }
+      ]
+    },
+    "teknofest": {
+      "title": "TeknoFest PPG Sinyal Analizörü",
+      "category": "Mobil Geliştirme / Sinyal İşleme",
+      "status": "Yarışma projesi",
+      "description": "Akıllı telefon kamerasıyla fotopletismografi (PPG) nabız sinyallerini alan, bu veriyi işleyen ve sonuçları grafiklerle sayısal değerler halinde gösteren bir Flutter uygulaması.",
+      "contribution": "Flutter ön yüzünü geliştirdim, uygulamayı bir Python backend'ine bağladım ve sinyal sonuçlarının görselleştirmesini yaptım. Beş kişilik ekibimizde toplantıları koordine ettim, ilerlemeyi sundum ve görev dağılımına yardımcı oldum.",
+      "challenges": [
+        "Flutter'ı bir Python backend'ine bağlamak",
+        "Sinyal sonuçlarını okunabilir kılmak",
+        "Beş kişilik ekibi koordine etmek"
+      ],
+      "result": "Proje TeknoFest yarışmasına katıldı.",
+      "resultNote": "Bu sayfa bir derece veya ödül iddia etmez.",
+      "technologies": ["Dart", "Flutter", "Python", "Görüntü işleme", "Veri görselleştirme"],
+      "reading": "Nabız okuması",
+      "sampleReading": "Örnek okuma",
+      "bpm": "bpm",
+      "readingValue": "72",
+      "waveLabel": "Kamera PPG"
+    }
+  },
+  "other": {
+    "title": "Diğer Mühendislik Çalışmaları",
+    "client": {
+      "title": "Müşteri Web Siteleri",
+      "body": "Dev Secure'de restoran, kafe, klinik ve kişisel siteler dahil olmak üzere müşteriler için Laravel web siteleri geliştirdim ve bakımını yaptım. İşin içinde yapay zekâ ile bütünleşen işlevler, barındırma sorunlarını giderme ve veritabanı bakımı da vardı. Örneklerden biri, bir restoran sitesine yapay zekâ ile ilgili bir kalori hesaplama özelliği eklemekti."
+    },
+    "blog": {
+      "title": "Laravel Blog Platformu",
+      "body": "Macellan Inc. stajımda API'ler ve bülten işlevi olan Laravel tabanlı bir blog sitesi geliştirdim. Birim testleri, özellik testleri, Blade, Vue, Artisan, Docker ve Agile ekip pratikleriyle de çalıştım."
+    }
+  },
+  "about": {
+    "title": "Kodun Ötesinde",
+    "paragraphs": [
+      "İstanbul, Türkiye'de yaşayan bir yazılım mühendisiyim. 2025'te İstinye Üniversitesi Yazılım Mühendisliği bölümünden mezun oldum.",
+      "Backend geliştirme, full-stack web uygulamaları, mobil geliştirme, yapay zekâ ile bütünleşen sistemler ve teknik ekip koordinasyonu üzerine çalıştım. Gerçek bir problemi, insanların kullanabileceği bir yazılıma dönüştürmeyi seviyorum.",
+      "Teknik olarak zorlayıcı projelerde, deneyimli ekiplerle ve öğrenmeye açık ortamlarda ilerlemek istiyorum. Özellikle finansal teknolojiler, sağlık teknolojileri ve girişimcilikle ilgileniyorum."
+    ],
+    "focusTitle": "İlgi alanları",
+    "focus": ["Finansal teknolojiler", "Sağlık teknolojileri", "Girişimcilik"],
+    "basedLabel": "Konum",
+    "graduatedLabel": "Mezuniyet",
+    "graduatedValue": "2025 · İstinye Üniversitesi"
+  },
+  "skills": {
+    "title": "Araçlar ve Teknolojiler",
+    "intro": "Profesyonel rollerimde, akademik projelerimde ve kişisel çalışmalarımda kullandığım araçlar. Bu bir sıralama değildir ve yeterlilik puanı vermez.",
+    "groups": {
+      "backend": {
+        "title": "Backend",
+        "note": "Profesyonel rollerde kullandım. Python ağırlıklı olarak proje çalışmalarından geliyor.",
+        "items": ["PHP", "Laravel", "Livewire", "Python", "MySQL", "API geliştirme"]
+      },
+      "frontend": {
+        "title": "Ön Yüz ve Mobil",
+        "note": "Vue profesyonel çalışmada. React, Next.js, TypeScript, Flutter ve Dart projelerde.",
+        "items": ["JavaScript", "TypeScript", "React", "Next.js", "Vue", "Flutter", "Dart"]
+      },
+      "ai": {
+        "title": "Yapay Zekâ ve Veri",
+        "note": "Akademik ve proje çalışmaları.",
+        "items": ["Rasa", "Yapay zekâ entegrasyonu", "PostgreSQL", "Supabase", "Veri görselleştirme"]
+      },
+      "practices": {
+        "title": "Geliştirme Pratikleri",
+        "note": "Test ve Agile teslimat dahil profesyonel çalışma.",
+        "items": ["Docker", "UNIX", "Agile metodolojisi", "Birim testi", "Özellik testi", "Git"]
+      }
+    }
+  },
+  "education": {
+    "title": "Eğitim ve Öne Çıkanlar",
+    "degree": "Yazılım Mühendisliği Lisans Derecesi",
+    "school": "İstinye Üniversitesi",
+    "highlightsTitle": "Öne çıkanlar",
+    "highlights": [
+      "Model Birleşmiş Milletler: Doha'daki Georgetown Üniversitesi'nde Dünya Sağlık Örgütü komitesinde Küba delegesi",
+      "Özyeğin Üniversitesi'nde girişimcilik eğitimi",
+      "İrlanda'da liderlik eğitimi",
+      "Laracasts üzerinden PHP Laravel 8 sertifikası",
+      "Django Web Development sertifikası"
+    ],
+    "languagesTitle": "Konuşulan diller",
+    "languages": ["Arapça — Ana dil", "İngilizce — Akıcı", "Türkçe — Orta"]
+  },
+  "contact": {
+    "title": "Birlikte Değerli Bir Şeyler Üretelim.",
+    "body": "Zorlu projelerde çalışmak, yetenekli ekiplerle birlikte üretmek ve yazılım mühendisi olarak gelişmeye devam etmek istiyorum.",
+    "email": "E-posta",
+    "github": "GitHub",
+    "linkedin": "LinkedIn"
+  }
+}

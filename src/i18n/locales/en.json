@@ -1,0 +1,237 @@
+{
+  "meta": {
+    "title": "Mohammed Abughazala | Software Engineer",
+    "description": "Explore the portfolio of Mohammed Abughazala, a software engineer specializing in full-stack development, mobile applications, and AI-integrated solutions."
+  },
+  "common": {
+    "location": "Istanbul, Türkiye"
+  },
+  "a11y": {
+    "skip": "Skip to content",
+    "backToTop": "Back to top",
+    "copy": "Copy",
+    "copyEmail": "Copy email address",
+    "copied": "Email copied",
+    "copyFailed": "Could not copy email",
+    "openInNewTab": "Opens in a new tab"
+  },
+  "nav": {
+    "home": "Mohammed Abughazala, back to top",
+    "work": "Work",
+    "about": "About",
+    "skills": "Skills",
+    "contact": "Contact",
+    "language": "Language",
+    "primary": "Primary",
+    "mobile": "Menu",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "hero": {
+    "role": "Software Engineer",
+    "headline": "Building thoughtful software for real-world problems.",
+    "description": "I'm a software engineer based in Istanbul, working across web development, mobile applications, and AI-integrated systems. I enjoy turning complex problems into practical, intuitive digital experiences.",
+    "ctaWork": "Explore My Work",
+    "ctaContact": "Get in Touch",
+    "scroll": "Scroll"
+  },
+  "device": {
+    "initials": "MA",
+    "codeFile": "focus.ts",
+    "code": [
+      "const focus = ['web', 'mobile', 'ai']",
+      "const city = 'Istanbul'",
+      "function build(problem: string) {",
+      "  return makeUseful(problem)",
+      "}"
+    ]
+  },
+  "work": {
+    "title": "Selected Work",
+    "subtitle": "A collection of projects where I've explored software engineering, artificial intelligence, and practical problem-solving.",
+    "contribution": "Contribution",
+    "challenges": "Engineering focus",
+    "technologies": "Technologies",
+    "status": "Status",
+    "timeline": "Timeline",
+    "present": "Present",
+    "conceptual": "Conceptual mockup",
+    "fictionalData": "Fictional demonstration data",
+    "notMedical": "Demonstration only. Not a medical measurement.",
+    "productDirection": "Product direction"
+  },
+  "projects": {
+    "finance": {
+      "title": "Personal Finance Tracker",
+      "category": "Full-Stack Web and Mobile Application",
+      "status": "In active development",
+      "description": "A personal finance management platform designed to help users organize their income, expenses, accounts, budgets, and financial activity through a modern web and mobile experience. The idea originated from my father's manual Excel-based bookkeeping and the opportunity to make financial tracking more accessible.",
+      "visionNote": "The platform is in active development. The items below describe the product direction. They are not presented as finished features, because the implementation status of each one is not verified on this site.",
+      "features": [
+        "Income and expense tracking",
+        "Account management",
+        "Budget management",
+        "Recurring transactions",
+        "Financial reports",
+        "Multiple language support",
+        "Spreadsheet importing",
+        "Receipt reading",
+        "AI-assisted functionality",
+        "Transaction detection from device notifications, confirmed by the user before saving"
+      ],
+      "contribution": "I am building the web and mobile experience around a shared backend, with authentication, a relational model for financial records, and delivery in stages.",
+      "challenges": [
+        "One backend shared by web and mobile",
+        "Authentication and data ownership",
+        "Relational modeling of financial records",
+        "Shipping the product in stages"
+      ],
+      "stackWeb": "Web",
+      "stackWebItems": ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "PostgreSQL"],
+      "stackMobile": "Mobile",
+      "stackMobileItems": ["React Native", "Expo", "TypeScript"],
+      "stackAlso": "Also used",
+      "stackAlsoItems": ["Supabase Authentication", "Recharts", "Internationalization"],
+      "demo": "Demo",
+      "balance": "Balance",
+      "income": "Income",
+      "expenses": "Expenses",
+      "balanceValue": "₺48,250",
+      "incomeValue": "₺62,400",
+      "expenseValue": "₺14,150",
+      "sample": "Sample data",
+      "activity": "Recent activity",
+      "groceries": "Groceries",
+      "transport": "Transport",
+      "housing": "Housing",
+      "food": "Food",
+      "market": "Demo Market",
+      "transit": "Demo Transit",
+      "rent": "Demo Rent",
+      "marketValue": "−₺186",
+      "transitValue": "−₺42",
+      "rentValue": "−₺12,500",
+      "months": ["Apr", "May", "Jun", "Jul", "Aug", "Sep"]
+    },
+    "soulspace": {
+      "title": "SoulSpace",
+      "category": "AI / Full-Stack Development",
+      "status": "Academic graduation project",
+      "description": "SoulSpace is an AI-powered mental health support companion I developed as a graduation project with one teammate. It explored how conversational AI could offer supportive interactions for people who may hesitate to seek professional help. The system was designed to encourage professional support when that was appropriate.",
+      "disclaimer": "This was an academic project. It is not clinically validated, medically certified, or a proven therapeutic tool.",
+      "contribution": "I worked on full-stack development, conversational AI integration, model training and testing, application functionality, and collaboration with my teammate.",
+      "challenges": [
+        "Fitting a conversational system into Laravel",
+        "Training and testing dialogue behavior",
+        "Encouraging professional care without replacing it",
+        "Building the project as a two-person team"
+      ],
+      "milestones": [
+        "Received an A grade at university",
+        "Presented at the university",
+        "Pitched to angel investors in South Africa"
+      ],
+      "technologies": ["Rasa", "PHP", "Laravel", "Livewire"],
+      "you": "You",
+      "companion": "SoulSpace",
+      "messages": [
+        { "from": "user", "text": "I've been feeling overwhelmed lately." },
+        { "from": "companion", "text": "That sounds heavy. I'm here to listen. If this feels like more than you want to carry alone, a mental health professional can help." },
+        { "from": "user", "text": "I'm not sure where to start." },
+        { "from": "companion", "text": "A counselor or your local health service can be a solid next step. I can help you think through what you want to say." }
+      ]
+    },
+    "teknofest": {
+      "title": "TeknoFest PPG Signal Analyzer",
+      "category": "Mobile Development / Signal Processing",
+      "status": "Competition project",
+      "description": "A Flutter application that captures photoplethysmography (PPG) pulse signals with a smartphone camera, processes that data, and presents the results as graphs and numerical readings.",
+      "contribution": "I developed the Flutter frontend, integrated the app with a Python backend, and implemented the visualization of the signal results. In our five-person team I coordinated meetings, presented progress, and helped distribute tasks.",
+      "challenges": [
+        "Connecting Flutter to a Python backend",
+        "Making signal results readable",
+        "Coordinating a five-person team"
+      ],
+      "result": "The project was entered in the TeknoFest competition.",
+      "resultNote": "This page does not claim a placement or award.",
+      "technologies": ["Dart", "Flutter", "Python", "Image processing", "Data visualization"],
+      "reading": "Pulse reading",
+      "sampleReading": "Sample reading",
+      "bpm": "bpm",
+      "readingValue": "72",
+      "waveLabel": "Camera PPG"
+    }
+  },
+  "other": {
+    "title": "Other Engineering Work",
+    "client": {
+      "title": "Client Website Development",
+      "body": "At Dev Secure I developed and maintained Laravel websites for clients including restaurants, cafés, clinics, and personal sites. The work included AI-integrated functionality, hosting troubleshooting, and database maintenance. One example was integrating an AI-related calorie calculation feature into a restaurant website."
+    },
+    "blog": {
+      "title": "Laravel Blog Platform",
+      "body": "During my internship at Macellan Inc. I built a Laravel blog with APIs and newsletter functionality. I also worked with unit tests, feature tests, Blade, Vue, Artisan, Docker, and Agile team practices."
+    }
+  },
+  "about": {
+    "title": "Beyond the Code",
+    "paragraphs": [
+      "I'm a software engineer based in Istanbul, Türkiye. I graduated from İstinye University in 2025 with a degree in Software Engineering.",
+      "I've worked across backend development, full-stack web applications, mobile development, AI-integrated systems, and technical team coordination. I like turning a real problem into software people can actually use.",
+      "I'm looking for technically challenging projects, experienced teams, and room to keep learning. I'm especially interested in financial technology, health-related technology, and entrepreneurship."
+    ],
+    "focusTitle": "Interests",
+    "focus": ["Financial technology", "Health technology", "Entrepreneurship"],
+    "basedLabel": "Based in",
+    "graduatedLabel": "Graduated",
+    "graduatedValue": "2025 · İstinye University"
+  },
+  "skills": {
+    "title": "Tools & Technologies",
+    "intro": "Tools I have used in professional roles, academic projects, and personal work. This is not a ranked chart and it does not assign proficiency scores.",
+    "groups": {
+      "backend": {
+        "title": "Backend",
+        "note": "Used in professional roles. Python comes mainly from project work.",
+        "items": ["PHP", "Laravel", "Livewire", "Python", "MySQL", "API development"]
+      },
+      "frontend": {
+        "title": "Frontend and Mobile",
+        "note": "Vue in professional work. React, Next.js, TypeScript, Flutter, and Dart in projects.",
+        "items": ["JavaScript", "TypeScript", "React", "Next.js", "Vue", "Flutter", "Dart"]
+      },
+      "ai": {
+        "title": "AI and Data",
+        "note": "Academic and project work.",
+        "items": ["Rasa", "AI integration", "PostgreSQL", "Supabase", "Data visualization"]
+      },
+      "practices": {
+        "title": "Development Practices",
+        "note": "Professional work, including testing and Agile delivery.",
+        "items": ["Docker", "UNIX", "Agile methodology", "Unit testing", "Feature testing", "Git"]
+      }
+    }
+  },
+  "education": {
+    "title": "Education and Highlights",
+    "degree": "Bachelor's Degree in Software Engineering",
+    "school": "İstinye University",
+    "highlightsTitle": "Highlights",
+    "highlights": [
+      "Model United Nations: Delegate of Cuba in the World Health Organization committee at Georgetown University in Doha",
+      "Entrepreneurship course at Özyeğin University",
+      "Leadership course in Ireland",
+      "PHP Laravel 8 certification through Laracasts",
+      "Django Web Development certification"
+    ],
+    "languagesTitle": "Spoken languages",
+    "languages": ["Arabic — Native", "English — Fluent", "Turkish — Intermediate"]
+  },
+  "contact": {
+    "title": "Let's Build Something Meaningful.",
+    "body": "I'm always interested in opportunities to work on challenging projects, collaborate with talented teams, and continue growing as a software engineer.",
+    "email": "Email",
+    "github": "GitHub",
+    "linkedin": "LinkedIn"
+  }
+}

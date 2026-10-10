@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#08080D"/>
+  <circle cx="980" cy="160" r="300" fill="#8B5CF6" opacity="0.16"/>
+  <text x="80" y="250" fill="#A78BFA" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="22" letter-spacing="5">SOFTWARE ENGINEER</text>
+  <text x="80" y="360" fill="#F5F3FA" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="68">Mohammed Abughazala</text>
+  <text x="80" y="430" fill="#A6A1B3" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="28">Istanbul, T&#252;rkiye</text>
+  <rect x="80" y="480" width="72" height="4" fill="#8B5CF6"/>
+</svg>
