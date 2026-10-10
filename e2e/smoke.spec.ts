@@ -75,6 +75,42 @@ test('moves the device screen with scroll and reverses it', async ({ page }, tes
     .toBeGreaterThan(0.8)
 })
 
+test('keeps the phone compact and in flow on narrow screens', async ({ page }, testInfo) => {
+  test.skip(testInfo.project.name === 'desktop')
+  await page.goto('./')
+  await page.addStyleTag({ content: 'html { scroll-behavior: auto !important; }' })
+  const viewport = page.viewportSize()!
+
+  const hero = page.locator('[data-mobile-phone="hero"] .device-shell')
+  await expect(hero).toBeVisible()
+  const heroBox = (await hero.boundingBox())!
+  expect(heroBox.height).toBeLessThanOrEqual(viewport.height * 0.5)
+  await expect(page.getByRole('link', { name: 'Explore My Work' })).toBeInViewport()
+
+  // Nothing besides the header may be fixed or pinned, so the phone cannot float over text.
+  const pinned = await page.evaluate(() =>
+    [...document.querySelectorAll('main *')]
+      .filter((element) => element.getClientRects().length > 0)
+      .filter((element) => ['fixed', 'sticky'].includes(getComputedStyle(element).position)).length,
+  )
+  expect(pinned).toBe(0)
+
+  // Each project phone swaps from the previous screen to its own while scrolling, and back again.
+  const phone = page.locator('[data-mobile-phone="soulspace"]')
+  const opacity = (id: string) =>
+    phone.locator(`[data-screen="${id}"]`).evaluate((element) => Number(getComputedStyle(element).opacity))
+  await phone.evaluate((element) => {
+    window.scrollTo(0, element.getBoundingClientRect().top + window.scrollY - window.innerHeight * 0.3)
+  })
+  await expect.poll(() => opacity('soulspace')).toBeGreaterThan(0.9)
+  await expect.poll(() => opacity('finance')).toBeLessThan(0.1)
+  await phone.evaluate((element) => {
+    window.scrollTo(0, element.getBoundingClientRect().top + window.scrollY - window.innerHeight * 0.95)
+  })
+  await expect.poll(() => opacity('finance')).toBeGreaterThan(0.9)
+  await expect.poll(() => opacity('soulspace')).toBeLessThan(0.1)
+})
+
 test('has no horizontal overflow', async ({ page }, testInfo) => {
   await page.goto('./')
   await expect(page.getByRole('heading', { level: 1 })).toBeVisible()
@@ -109,7 +145,7 @@ test('keeps content available with reduced motion', async ({ browser }, testInfo
 test('captures review screenshots', async ({ page }, testInfo) => {
   mkdirSync('e2e/artifacts', { recursive: true })
   await page.goto('./')
-  const scene = testInfo.project.name === 'desktop' ? '.device-rail .device-scene' : '.device-mobile .device-scene'
+  const scene = testInfo.project.name === 'desktop' ? '.device-rail .device-scene' : '[data-mobile-phone="hero"] .device-scene'
   await page.locator(scene).waitFor()
   await page.screenshot({ path: `e2e/artifacts/${testInfo.project.name}-top.png` })
   await page.locator('#hero').screenshot({ path: `e2e/artifacts/${testInfo.project.name}-hero.png` })

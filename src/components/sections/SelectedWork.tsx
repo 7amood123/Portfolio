@@ -11,7 +11,7 @@ export function SelectedWork({ staticDevices = false }: { staticDevices?: boolea
   const otherRef = useReveal<HTMLDivElement>()
 
   return (
-    <Section id="work" labelledBy="work-title" embedded className="scroll-mt-72 lg:scroll-mt-28">
+    <Section id="work" labelledBy="work-title" embedded className="lg:scroll-mt-28">
       <div ref={headingRef}>
         <SectionHeading index="01" id="work-title" title={t('work.title')} subtitle={t('work.subtitle')} />
       </div>

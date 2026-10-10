@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { devicePose, screenPoses, type Markers } from '@/components/device/deviceMotion'
+import { compactPose, devicePose, heroTilt, previousScreens, screenPoses, type Markers } from '@/components/device/deviceMotion'
 
 const markers: Markers = {
   finance: 0.2,
@@ -30,5 +30,37 @@ describe('device scroll poses', () => {
     const upward = screenPoses(0.39, markers)
     expect(upward).toEqual(downward)
     expect(devicePose(0.39, markers, true)).toEqual(devicePose(0.39, markers, true))
+  })
+})
+
+describe('compact (mobile) phone poses', () => {
+  it('shows the previous screen before the phone arrives and its own screen after', () => {
+    expect(compactPose(0).previous.opacity).toBe(1)
+    expect(compactPose(0).current.opacity).toBe(0)
+    expect(compactPose(1).previous.opacity).toBe(0)
+    expect(compactPose(1).current.opacity).toBe(1)
+  })
+
+  it('crossfades without ever dimming both screens at once', () => {
+    for (let step = 0; step <= 20; step += 1) {
+      const pose = compactPose(step / 20)
+      expect(pose.previous.opacity + pose.current.opacity).toBeCloseTo(1, 5)
+    }
+  })
+
+  it('is a pure function of progress, so scrolling back reverses it', () => {
+    expect(compactPose(0.5)).toEqual(compactPose(0.5))
+    expect(compactPose(-1)).toEqual(compactPose(0))
+    expect(compactPose(2)).toEqual(compactPose(1))
+  })
+
+  it('chains the projects in order: portrait, finance, soulspace, teknofest', () => {
+    expect(previousScreens).toEqual({ finance: 'portrait', soulspace: 'finance', teknofest: 'soulspace' })
+  })
+
+  it('keeps the hero tilt small and bounded', () => {
+    expect(heroTilt(0).rotateY).toBe(-12)
+    expect(heroTilt(1).rotateY).toBe(-4)
+    expect(heroTilt(5)).toEqual(heroTilt(1))
   })
 })

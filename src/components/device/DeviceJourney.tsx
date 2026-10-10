@@ -13,14 +13,10 @@ export function DeviceJourney() {
   const { i18n } = useTranslation()
   const journeyRef = useRef<HTMLDivElement>(null)
   const desktopRef = useRef<DeviceBundle | null>(null)
-  const mobileRef = useRef<DeviceBundle | null>(null)
-  const mobileHostRef = useRef<HTMLDivElement>(null)
 
   useDeviceScroll({
     journeyRef,
     desktopRef,
-    mobileRef,
-    mobileHostRef,
     enabled: !reduced,
     language: i18n.language,
   })
@@ -32,14 +28,7 @@ export function DeviceJourney() {
     >
       <div className="min-w-0 px-5 sm:px-8 lg:pr-4 lg:pl-8">
         <Hero portrait={reduced} />
-        <div>
-          {reduced ? null : (
-            <div ref={mobileHostRef} className="device-mobile sticky top-[4.25rem] z-20 bg-bg py-2 lg:hidden">
-              <InteractiveDevice bundleRef={mobileRef} live />
-            </div>
-          )}
-          <SelectedWork staticDevices={reduced} />
-        </div>
+        <SelectedWork staticDevices={reduced} />
         <About />
         <Skills />
       </div>

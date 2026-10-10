@@ -26,15 +26,19 @@ export function InteractiveDevice({
   bundleRef,
   screen = 'portrait',
   live = false,
+  screens,
 }: {
   bundleRef?: RefObject<DeviceBundle | null>
   screen?: ScreenId
   live?: boolean
+  /** Render only these screens (the last one is shown until scroll drives the crossfade). */
+  screens?: readonly ScreenId[]
 }) {
   const sceneRef = useRef<HTMLDivElement>(null)
   const tiltRef = useRef<HTMLDivElement>(null)
   const layers = useRef<Partial<Record<ScreenId, HTMLDivElement | null>>>({})
-  const ids = live ? screenIds : [screen]
+  const ids = screens ?? (live ? screenIds : [screen])
+  const initial = screens ? screens[screens.length - 1] : live ? 'portrait' : screen
 
   useLayoutEffect(() => {
     if (!bundleRef) return
@@ -57,7 +61,7 @@ export function InteractiveDevice({
             <DeviceScreen
               key={id}
               id={id}
-              active={!live && id === screen ? true : id === 'portrait'}
+              active={id === initial}
               layerRef={(node) => {
                 layers.current[id] = node
               }}

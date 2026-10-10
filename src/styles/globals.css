@@ -188,24 +188,74 @@
   background: radial-gradient(ellipse, rgba(0, 0, 0, 0.55), transparent 70%);
 }
 
-.device-mobile {
-  overflow: clip;
-}
-
-.device-mobile.is-resting {
-  height: 0;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  visibility: hidden;
-}
-
+/*
+ * Compact phone for narrow screens. It stays in normal flow (never fixed or sticky) so it cannot cover text.
+ * The screens are drawn for a ~210px phone, so the phone is scaled with `zoom`, which also shrinks its layout
+ * box. The scale is chosen from the viewport height so the phone stays at roughly 40-45% of it.
+ * Large screens are untouched: none of these rules apply from 1024px up.
+ */
 @media (max-width: 1023px) {
-  .device-mobile .device-scene {
+  :root {
+    --device-zoom: 0.78;
+  }
+
+  .device-compact {
+    zoom: var(--device-zoom);
+  }
+
+  .device-compact .device-scene {
     width: 210px;
+  }
+
+  .device-compact .device-shadow {
+    margin-top: 0.6rem;
+  }
+
+  .device-stage {
+    border: 1px solid var(--color-border);
+    border-radius: 1.5rem;
+    padding: 1.25rem 1rem 1rem;
+    background:
+      radial-gradient(ellipse at 50% 18%, rgba(139, 92, 246, 0.2), transparent 62%),
+      var(--color-bg-secondary);
   }
 }
 
+@media (max-width: 1023px) and (max-height: 780px) {
+  :root {
+    --device-zoom: 0.7;
+  }
+}
+
+@media (max-width: 1023px) and (max-height: 700px) {
+  :root {
+    --device-zoom: 0.62;
+  }
+}
+
+@media (max-width: 1023px) and (max-height: 600px) {
+  :root {
+    --device-zoom: 0.52;
+  }
+}
+
+@media (max-width: 1023px) and (max-height: 450px) {
+  :root {
+    --device-zoom: 0.4;
+  }
+}
+
+@media (max-width: 1023px) and (min-height: 900px) {
+  :root {
+    --device-zoom: 0.86;
+  }
+}
+
+@media (max-width: 1023px) and (min-height: 1000px) {
+  :root {
+    --device-zoom: 0.95;
+  }
+}
 .device-slot {
   pointer-events: none;
 }

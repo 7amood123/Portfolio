@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import { InteractiveDevice } from '@/components/device/InteractiveDevice'
-import type { ScreenId } from '@/components/device/deviceMotion'
+import { previousScreens, type ScreenId } from '@/components/device/deviceMotion'
 import { useReveal } from '@/hooks/useReveal'
 import type { ProjectMeta } from '@/data/projects'
 import { formatPeriod } from '@/utils/dates'
@@ -31,16 +31,24 @@ export function ProjectShowcase({
       ref={ref}
       id={`project-${project.id}`}
       aria-labelledby={`${project.id}-title`}
-      className="scroll-mt-64 py-12 lg:min-h-[72vh] lg:scroll-mt-28 lg:py-16"
+      className="scroll-mt-24 py-12 lg:min-h-[72vh] lg:scroll-mt-28 lg:py-16"
     >
-      {staticDevice ? (
-        <div className="mb-8">
-          <InteractiveDevice screen={projectScreens[project.id]} />
-          <p className="mt-3 text-center text-xs text-muted">
-            {t('work.conceptual')} · {t('work.fictionalData')}
-          </p>
+      {/*
+        Below the large breakpoint the phone sits in normal flow above the text, in its own visual area.
+        On large screens the shared rail device is used instead, unless motion is reduced.
+      */}
+      <div className={cn('device-stage mb-8', !staticDevice && 'lg:hidden')}>
+        <div data-mobile-phone={staticDevice ? undefined : project.id} className="device-compact">
+          {staticDevice ? (
+            <InteractiveDevice screen={projectScreens[project.id]} />
+          ) : (
+            <InteractiveDevice live screens={[previousScreens[project.id], projectScreens[project.id]]} />
+          )}
         </div>
-      ) : null}
+        <p className="mt-3 text-center text-xs text-muted">
+          {t('work.conceptual')} · {t('work.fictionalData')}
+        </p>
+      </div>
       <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
         <p className="text-xs font-medium tracking-[0.18em] text-violet uppercase">{project.index}</p>
         <p className="text-sm text-muted">{t(`${base}.category`)}</p>

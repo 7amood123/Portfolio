@@ -2,6 +2,15 @@ export const screenIds = ['portrait', 'finance', 'soulspace', 'teknofest', 'code
 
 export type ScreenId = (typeof screenIds)[number]
 
+export type ProjectId = 'finance' | 'soulspace' | 'teknofest'
+
+/** The screen shown just before each project, so scrolling down crossfades from it. */
+export const previousScreens: Record<ProjectId, ScreenId> = {
+  finance: 'portrait',
+  soulspace: 'finance',
+  teknofest: 'soulspace',
+}
+
 export interface Markers {
   finance: number
   soulspace: number
@@ -113,4 +122,35 @@ export function devicePose(progress: number, markers: Markers, desktop: boolean)
     x: desktop ? 10 : 0,
     opacity: 1 - clamp(amount),
   }
+}
+
+export interface CompactPose {
+  rotateY: number
+  rotateX: number
+  /** The screen that was on the phone before this one. */
+  previous: ScreenPose
+  /** The screen this phone belongs to. */
+  current: ScreenPose
+}
+
+/**
+ * Pose for an in-flow phone on narrow screens. `progress` runs 0 -> 1 while the phone travels up the
+ * viewport. The screen swaps in the middle of that travel and the pose is a pure function of progress,
+ * so scrolling back up reverses it exactly.
+ */
+export function compactPose(progress: number): CompactPose {
+  const p = clamp(progress)
+  const swap = clamp((p - 0.3) / 0.4)
+  return {
+    rotateY: lerp(-16, -8, p),
+    rotateX: lerp(5, 3, p),
+    previous: { opacity: 1 - swap, y: -14 * swap },
+    current: { opacity: swap, y: 14 * (1 - swap) },
+  }
+}
+
+/** Tilt for the hero phone while the hero scrolls past. */
+export function heroTilt(progress: number): { rotateY: number; rotateX: number } {
+  const p = clamp(progress)
+  return { rotateY: lerp(-12, -4, p), rotateX: lerp(4, 2, p) }
 }

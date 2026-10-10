@@ -36,6 +36,6 @@ These mockups use fictional numbers. A real screenshot should not include anyone
 
 The phone rotation, scale, and screen changes are tied to scroll with GSAP ScrollTrigger. Scrolling back up reverses them.
 
-On a narrow screen the phone stays above the project text while Selected Work is on screen, then leaves before About.
+Below 1024px there is no pinned phone. A compact phone (about 40-45% of the viewport height, scaled with CSS `zoom`) sits in normal flow: once in the hero, and once above each project's text. Each project phone has its own ScrollTrigger (created inside `gsap.matchMedia()`), which crossfades from the previous project's screen to its own while the phone travels up the viewport, and reverses on the way back. Nothing is fixed or sticky, so the phone cannot cover text and simply scrolls away before About.
 
 When the visitor prefers reduced motion, the scroll movement is turned off. The portrait stays in the hero and each project shows its own static screen.
